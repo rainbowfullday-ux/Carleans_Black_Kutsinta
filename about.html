@@ -87,7 +87,6 @@
         .hamburger {
             display: none;
             flex-direction: column;
-            cursor: pointer;
             gap: 5px;
         }
 
@@ -279,13 +278,18 @@
 
 
 
+
+
+
+
+
         /* MISSION AND VISION SECTION */
         .mission-vision {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            align-items: stretch;
             gap: 20px;
-            width: 100%;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
             .mission-vision .card {
@@ -295,7 +299,11 @@
                 padding: 20px;
                 text-align: center;
                 box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
             }
+
 
                 .mission-vision .card h3 {
                     font-size: clamp(20px, 2vw + 0.5rem, 32px);
@@ -380,27 +388,24 @@
 
 
 
-/*Animation ng mobile navigation*/
-.mobile-nav {
-    display: flex !important;
-    flex-direction: column;
-    max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.4s ease;
-}
+        /*Animation ng mobile navigation*/
+        .mobile-nav {
+            display: flex !important;
+            flex-direction: column;
+            max-height: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.4s ease;
+        }
 
-#nav-toggle:checked + .hamburger + .mobile-nav {
-    max-height: 500px; /* enough for all links */
-    padding-top: 15px;
-    padding-bottom: 15px;
-    opacity: 1;
-}
-
-
-        
+        #nav-toggle:checked + .hamburger + .mobile-nav {
+            max-height: 500px; /* enough for all links */
+            padding-top: 15px;
+            padding-bottom: 15px;
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -509,4 +514,5 @@
 
 </body>
 </html>
+
 
