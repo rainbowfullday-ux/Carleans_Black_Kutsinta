@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Carleans Black Kutsinta</title>
+    <style>
+
+
+
+
+        /* Animation of the page */
+        body {
+            animation: fadeIn 0.5s ease-in-out;
+            background: #fff;
+            color: #333;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0
+            }
+
+            100% {
+                opacity: 1
+            }
+        }
+
+
+
+        /* Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+
+
+
+        /* NAVIGATION SECTION*/
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: #f5f5f5;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+
+            .nav-logo img {
+                width: 50px;
+                height: 50px;
+                margin-right: 10px;
+                border-radius: 1000px;
+            }
+
+            .nav-logo span {
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+            .nav-links a {
+                text-decoration: none;
+                color: #333;
+                font-weight: 500;
+                padding: 8px 12px;
+                border-radius: 5px;
+                transition: 0.3s;
+            }
+
+                .nav-links a:hover {
+                    background: #000;
+                    color: #fff;
+                }
+
+
+
+        /* Hamburger for mobile */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+            .hamburger div {
+                width: 25px;
+                height: 3px;
+                background: #333;
+                border-radius: 2px;
+            }
+
+        #nav-toggle {
+            display: none;
+        }
+
+
+
+        /* Mobile nav */
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            background: #f5f5f5;
+            padding: 15px 30px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            z-index: 999;
+        }
+
+            .mobile-nav a {
+                text-decoration: none;
+                color: #333;
+                font-weight: 500;
+                padding: 8px 12px;
+                border-radius: 5px;
+                transition: 0.3s;
+            }
+
+                .mobile-nav a:hover {
+                    background: #000;
+                    color: #fff;
+                }
+
+        #nav-toggle:checked + .hamburger + .mobile-nav {
+            display: flex;
+        }
+
+        @media(max-width:768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+
+        /* Page container */
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+
+
+        /* Header card  in the header section */
+        .our-products-card {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            width: 100%;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+            .our-products-card h1 {
+                font-size: 32px;
+                margin-bottom: 10px;
+            }
+
+            .our-products-card p {
+                font-size: 18px;
+                opacity: 0.85;
+                margin: 0;
+            }
+
+
+
+        /* Categories box */
+        .category-label {
+            background: #000;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .category-section {
+            margin-bottom: 20px;
+        }
+
+
+
+        /* for Product cards */
+        .product-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .product-card {
+            display: flex;
+            gap: 15px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            align-items: center;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+            width: 100%;
+            max-width: 100%;
+        }
+
+            .product-card:hover {
+                box-shadow: 0 8px 20px rgba(218,165,32,0.7);
+                transform: scale(1.02);
+            }
+
+            .product-card img {
+                width: 120px;
+                height: 120px;
+                object-fit: cover;
+            }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .rating {
+            display: inline-block;
+            background: #fff8c4;
+            color: #f5c518;
+            padding: 2px 6px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+
+
+        /* For Responsive */
+        @media(max-width:1024px) {
+            .product-card img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .product-name {
+                font-size: 15px;
+            }
+
+            .product-price {
+                font-size: 16px;
+            }
+
+            .rating {
+                font-size: 13px;
+            }
+        }
+
+        @media(max-width:768px) {
+            .product-card img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .product-name {
+                font-size: 14px;
+            }
+
+            .product-price {
+                font-size: 15px;
+            }
+
+            .rating {
+                font-size: 12px;
+            }
+
+            .product-card {
+                padding: 10px;
+                gap: 10px;
+            }
+        }
+
+        @media(max-width:480px) {
+            .product-card img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .product-name {
+                font-size: 13px;
+            }
+
+            .product-price {
+                font-size: 14px;
+            }
+
+            .rating {
+                font-size: 11px;
+            }
+
+            .product-card {
+                padding: 8px;
+                gap: 8px;
+            }
+        }
+
+
+
+
+        /* Footer Section */
+        .footer {
+            width: 100%;
+            background: #000;
+            color: #fff;
+            padding: 1.5rem 0;
+            line-height: 1.3;
+        }
+
+        .footer-content, .footer-end {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 clamp(1rem,5vw,3rem);
+            text-align: left;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            align-items: flex-start;
+        }
+
+        .footer-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: clamp(0.85rem,1.5vw,1rem);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+
+            .footer-item .icon {
+                font-size: clamp(1rem,1.8vw,1.2rem);
+                filter: grayscale(100%);
+                opacity: 0.6;
+                flex-shrink: 0;
+            }
+
+        .footer-end {
+            font-size: clamp(0.85rem,1.5vw,0.95rem);
+            opacity: 0.8;
+            margin-top: 1rem;
+        }
+
+        @media(max-width:400px) {
+            .footer-item {
+                font-size: 0.9rem;
+                white-space: normal;
+                text-overflow: unset;
+            }
+
+            .footer-content, .footer-end {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <!-- NAVIGATION SECTION -->
+    <nav>
+        <div class="nav-logo">
+            <a href="index.html"><img src="logo.jpg" alt="Carleans Logo"></a>
+            <span>Carleans Black Kutsinta</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <input type="checkbox" id="nav-toggle">
+        <label for="nav-toggle" class="hamburger"><div></div><div></div><div></div></label>
+        <div class="mobile-nav">
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+
+
+    <!-- PAGE CONTENT -->
+    <div class="page-container">
+
+        <!-- Our Products Header Card SECTION -->
+        <div class="our-products-card">
+            <h1>Our Products</h1>
+            <p>Explore our Best sellers, Native Delicacies, Savory dish and Add-ons</p>
+        </div>
+
+        <!-- Best Seller Category Products -->
+        <section class="category-section">
+            <div class="category-label">Best Seller</div>
+            <div class="product-list">
+                <a href="product1.html">
+                    <div class="product-card">
+                        <img src="kutsinta2.jpg" alt="Black Kutsinta">
+                        <div class="product-info">
+                            <div class="product-name">Black Kutsinta Regular Box</div>
+                            <div class="product-price">₱65.00</div>
+                            <div class="rating">⭐ 4.9</div>
+                        </div>
+                    </div>
+                </a>
+                <div class="product-card">
+                    <img src="kutsinta3.jpg" alt="Black Kutsinta Small">
+                    <div class="product-info">
+                        <div class="product-name">Black Kutsinta Small Box</div>
+                        <div class="product-price">₱35.00</div>
+                        <div class="rating">⭐ 4.8</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="coconut.jpg" alt="Toasted Coconut">
+                    <div class="product-info">
+                        <div class="product-name">Toasted Coconut</div>
+                        <div class="product-price">₱5.00</div>
+                        <div class="rating">⭐ 4.7</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Native Delicacies Products -->
+        <section class="category-section">
+            <div class="category-label">Native Delicacies</div>
+            <div class="product-list">
+                <a href="product2.html">
+                    <div class="product-card">
+                        <img src="putoCake.jpg" alt="Puto Cake">
+                        <div class="product-info">
+                            <div class="product-name">Puto Cake</div>
+                            <div class="product-price">₱100.00</div>
+                            <div class="rating">⭐ 4.9</div>
+                        </div>
+                    </div>
+                </a>
+                <div class="product-card">
+                    <img src="leche.jpg" alt="Leche Flan">
+                    <div class="product-info">
+                        <div class="product-name">Leche Flan</div>
+                        <div class="product-price">₱120.00</div>
+                        <div class="rating">⭐ 4.7</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="maja.jpg" alt="Maja Blanca">
+                    <div class="product-info">
+                        <div class="product-name">Maja Blanca</div>
+                        <div class="product-price">₱85.00</div>
+                        <div class="rating">⭐ 4.6</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Savory Dish Products-->
+        <section class="category-section">
+            <div class="category-label">Savory Dish</div>
+            <div class="product-list">
+                <a href="product3.html">
+                    <div class="product-card">
+                        <img src="bangus.jpg" alt="Rellenong Bangus">
+                        <div class="product-info">
+                            <div class="product-name">Rellenong Bangus</div>
+                            <div class="product-price">₱250.00</div>
+                            <div class="rating">⭐ 4.9</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Add-Ons Products -->
+        <section class="category-section">
+            <div class="category-label">Add-Ons</div>
+            <div class="product-list">
+                <div class="product-card">
+                    <img src="pandan.jpg" alt="Small Pandan Dip">
+                    <div class="product-info">
+                        <div class="product-name">Small Pandan Dip</div>
+                        <div class="product-price">₱25.00</div>
+                        <div class="rating">⭐ 4.8</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="banana.jpg" alt="Banana Chips">
+                    <div class="product-info">
+                        <div class="product-name">Banana Chips</div>
+                        <div class="product-price">₱70.00</div>
+                        <div class="rating">⭐ 4.8</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="coconut.jpg" alt="Toasted Coconut">
+                    <div class="product-info">
+                        <div class="product-name">Toasted Coconut</div>
+                        <div class="product-price">₱5.00</div>
+                        <div class="rating">⭐ 4.7</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+
+
+    <!-- FOOTER SECTION -->
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-item"><span class="icon">📞</span> +0935 786 1474</div>
+            <div class="footer-item"><span class="icon">📍</span> 0518 National Road Brgy Calumpang Binangonan Rizal 1940</div>
+            <div class="footer-item"><span class="icon">⏰</span> Mon – Sun | 7:00 AM – 6:00 PM</div>
+            <div class="footer-item"><span class="icon">✉️</span> carla_aran@yahoo.com</div>
+        </div>
+        <p class="footer-end">Carlean’s Black Kutsinta 2025</p>
+    </footer>
+
+</body>
+</html>

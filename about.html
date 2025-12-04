@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Carleans Black Kutsinta</title>
+    <style>
+
+        /*Animation of the Page */
+
+        body {
+            animation: fadeIn 0.5s ease-in-out;
+            background: #f2f2f2;
+            color: #333;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0
+            }
+
+            100% {
+                opacity: 1
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+
+
+        /* NAVIGATION SECTION */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: #f5f5f5;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+
+            .nav-logo img {
+                width: 50px;
+                height: 50px;
+                margin-right: 10px;
+                border-radius: 1000px;
+            }
+
+            .nav-logo span {
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+            .nav-links a {
+                text-decoration: none;
+                color: #333;
+                font-weight: 500;
+                padding: 8px 12px;
+                border-radius: 5px;
+                transition: 0.3s;
+            }
+
+                .nav-links a:hover {
+                    background: #000;
+                    color: #fff;
+                }
+
+
+
+        /* FOR MOBILE NAVIGATION */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+            .hamburger div {
+                width: 25px;
+                height: 3px;
+                background: #333;
+                border-radius: 2px;
+            }
+
+        #nav-toggle {
+            display: none;
+        }
+
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            background: #f5f5f5;
+            padding: 15px 30px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            z-index: 999;
+        }
+
+            .mobile-nav a {
+                text-decoration: none;
+                color: #333;
+                font-weight: 500;
+                padding: 8px 12px;
+                border-radius: 5px;
+                transition: 0.3s;
+            }
+
+                .mobile-nav a:hover {
+                    background: #000;
+                    color: #fff;
+                }
+
+        #nav-toggle:checked + .hamburger + .mobile-nav {
+            display: flex;
+        }
+
+        @media(max-width:768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+
+
+
+        /* ABOUT US SECTION */
+        .about-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .about-us-section {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-weight: bold;
+        }
+
+            .about-us-section h1 {
+                font-size: 32px;
+                margin-bottom: 10px;
+            }
+
+            .about-us-section p {
+                font-size: 18px;
+                opacity: 0.85;
+                margin: 0;
+            }
+
+
+
+
+        /* OWNER SECTION */
+        .owner-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+            .owner-section .card {
+                flex: 1 1 30%;
+                max-width: 350px;
+                aspect-ratio: 1/1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                overflow: hidden;
+                padding: 1rem;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+
+            .owner-section .welcome-card {
+                background: #806857;
+                color: #fff;
+                flex-direction: column;
+            }
+
+                .owner-section .welcome-card p:first-child {
+                    font-size: clamp(16px,1.2vw + 0.5rem,24px);
+                    font-weight: 300;
+                    margin-bottom: 0.5rem;
+                }
+
+                .owner-section .welcome-card p:last-child {
+                    font-size: clamp(20px,2vw + 0.5rem,28px);
+                    font-weight: bold;
+                }
+
+            .owner-section .img-card img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+
+            .owner-section .name-card {
+                background: #000;
+                color: #fff;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding: 1rem;
+            }
+
+                .owner-section .name-card p {
+                    font-size: clamp(20px,1.5vw + 0.5rem,36px);
+                    font-weight: bold;
+                    margin-bottom: 0.5rem;
+                }
+
+                .owner-section .name-card h3 {
+                    font-size: clamp(22px,2vw + 0.5rem,36px);
+                    margin: 4px 0;
+                    font-weight: bold;
+                }
+
+
+
+        /* This is for the responsiveness */
+        @media(max-width:600px) {
+            .owner-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+                .owner-section .card {
+                    width: 90%;
+                    aspect-ratio: auto;
+                    margin-bottom: 1rem;
+                }
+        }
+
+
+
+        /* HISTORY SECTION */
+        .history-section {
+            width: 100%;
+            background: #ececec;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+
+
+
+        /* MISSION AND VISION SECTION */
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+            .mission-vision .card {
+                background: #806857;
+                color: #fff;
+                border-radius: 10px;
+                padding: 20px;
+                text-align: center;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+
+                .mission-vision .card h3 {
+                    font-size: clamp(20px, 2vw + 0.5rem, 32px);
+                    margin-bottom: 10px;
+                }
+
+                .mission-vision .card p {
+                    font-size: clamp(16px, 1.2vw + 0.5rem, 20px);
+                }
+
+
+
+        /* this wan forces it to be single column for mobile screen sizes
+            so the mission and vision wont look too small
+        */
+        @media(max-width:1024px) {
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+
+        /* FOOTER SECTION */
+        .footer {
+            width: 100%;
+            background: #000;
+            color: #fff;
+            padding: 1.5rem 0;
+            line-height: 1.3;
+        }
+
+        .footer-content, .footer-end {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 clamp(1rem,5vw,3rem);
+            text-align: left;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            align-items: flex-start;
+        }
+
+        .footer-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: clamp(0.85rem,1.5vw,1rem);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+
+            .footer-item .icon {
+                font-size: clamp(1rem,1.8vw,1.2rem);
+                filter: grayscale(100%);
+                opacity: 0.6;
+                flex-shrink: 0;
+            }
+
+        .footer-end {
+            font-size: clamp(0.85rem,1.5vw,0.95rem);
+            opacity: 0.8;
+            margin-top: 1rem;
+        }
+
+        @media(max-width:400px) {
+            .footer-item {
+                font-size: 0.9rem;
+                white-space: normal;
+                text-overflow: unset;
+            }
+
+            .footer-content, .footer-end {
+                padding: 0 1rem;
+            }
+        }
+
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- NAVIGATION SECTION -->
+    <nav>
+        <div class="nav-logo">
+            <a href="index.html"><img src="logo.jpg" alt="Carleans Logo"></a>
+            <span>Carleans Black Kutsinta</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <input type="checkbox" id="nav-toggle">
+        <label for="nav-toggle" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+
+        <div class="mobile-nav">
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+
+
+    <!-- HEADER SECTION -->
+
+    <div class="about-container">
+
+        <section class="about-us-section">
+            <h1>About Us</h1>
+            <p>Learn more about Carleans Black Kutsinta</p>
+        </section>
+
+
+
+
+        <!-- OWNER SECTION -->
+        <section class="owner-section">
+            <div class="card welcome-card">
+                <p>Welcome to Carleans Black Kutsinta</p>
+                <p>Home to Unique Ricecakes</p>
+            </div>
+            <div class="card img-card">
+                <img src="owner.png" alt="Owners">
+            </div>
+            <div class="card name-card">
+                <p>Carleans Black Kutsinta Owners</p>
+                <h3>Carla Aran Paez</h3>
+                <h3>&</h3>
+                <h3>Rolan Leonardo Paez</h3>
+            </div>
+        </section>
+
+
+
+        <!-- HISTORY SECTION -->
+        <section class="history-section">
+            <h2>History</h2>
+            <p>
+                Carleans began in 2015 when husband and wife Rolan Leonardo Paez and Carla Aran Paez started sharing their homemade kakanin online. What began as simple posts eventually grew attention, especially when they introduced their black kutsinta. The idea came from their habit of experimenting with flavors and presentation. Since the color black is usually seen as unappetizing in food, they wanted to challenge that and give it a new image by showing that it can look good and taste just as good as the traditional version. They kept the same classic kutsinta flavor people love, then made it more unique with creamy caramel sauce and toasted coconut. As more people discovered their product, the small home-based business slowly expanded. Carleans opened their first branch in Calumpang, followed by Pantok and Angono. Along the way, they added more Filipino favorites like puto cake, leche flan, and maja blanca, which helped the brand grow while keeping its roots in familiar homemade kakanin.
+            </p>
+        </section>
+
+
+
+
+        <!-- MISSION AND VISION SECTION -->
+        <section class="mission-vision">
+            <div class="card">
+                <h3>Mission</h3>
+                <p>To provide customers with high-quality Filipino delicacies every day, ensuring that each product maintains consistent taste and quality.</p>
+            </div>
+            <div class="card">
+                <h3>Vision</h3>
+                <p>To be the household name for rice cakes in the Philippines. When people think of "kakanin," Carlean's should be the first name that comes to mind, recognized as the country's best delicacy.</p>
+            </div>
+        </section>
+
+    </div>
+
+
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-item"><span class="icon">📞</span> +0935 786 1474</div>
+            <div class="footer-item"><span class="icon">📍</span> 0518 National Road Brgy Calumpang Binangonan Rizal 1940</div>
+            <div class="footer-item"><span class="icon">⏰</span> Mon – Sun | 7:00 AM – 6:00 PM</div>
+            <div class="footer-item"><span class="icon">✉️</span> carla_aran@yahoo.com</div>
+        </div>
+        <p class="footer-end">Carlean’s Black Kutsinta 2025</p>
+    </footer>
+
+</body>
+</html>

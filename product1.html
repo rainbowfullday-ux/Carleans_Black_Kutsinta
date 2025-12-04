@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Kutsinta Details</title>
+
+    <style>
+        body {
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+
+        /*Animation for the Page*/
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+        /*Details sa card*/
+        .product-details-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            display: flex;
+            gap: 25px;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        }
+
+
+
+        /*Image sa card*/
+        .product-image {
+            width: 50%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+
+        /*Name ng product*/
+        .product-name {
+            font-size: clamp(18px, 2.2vw, 26px);
+            font-weight: bold;
+            color: #000;
+            text-align: left;
+        }
+
+
+        /*Price ng product*/
+        .product-price {
+            font-size: clamp(20px, 2.6vw, 30px);
+            color: #000;
+            font-weight: bold;
+        }
+
+
+        /*Ratings ng product*/
+        .product-rating {
+            background: #fff8c4;
+            color: #f5c518;
+            padding: 4px 8px;
+            font-size: clamp(12px, 1.6vw, 16px);
+            display: inline-block;
+            border-radius: 5px;
+            width: fit-content;
+        }
+
+
+        /*description ng product*/
+        .product-description {
+            color: #666;
+            line-height: 1.5;
+            margin-top: 10px;
+            font-size: clamp(14px, 1.6vw, 18px);
+            text-align: left;
+        }
+
+
+        /*Back Button pang balik sa product page */
+        .back-btn {
+            margin-top: 20px;
+            padding: 12px 18px;
+            background: #000;
+            color: #fff;
+            border: none;
+            width: fit-content;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: clamp(14px, 1.6vw, 16px);
+            transition: all 0.3s ease;
+            text-decoration: none; /*pangtanggal ng underline*/
+        }
+
+            .back-btn:hover {
+                background-color: #fff;
+                color: #000;
+                border: 1px solid #000;
+                text-decoration: none; /*pangtanggal ng underline*/
+            }
+
+
+
+
+        /* ----------------- RESPONSIVE ----------------- */
+        @media (max-width: 380px) {
+            .product-details-card {
+                flex-direction: column;
+                width: 90%;
+                margin: 1.5rem auto;
+                padding: 20px;
+            }
+
+            .product-image {
+                width: 100%;
+                max-height: 260px;
+            }
+
+            .product-info {
+                width: 100%;
+                text-align: left;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-details-card {
+                flex-direction: column;
+                width: 88%;
+                margin: 1.8rem auto;
+                padding: 20px;
+            }
+
+            .product-image {
+                width: 100%;
+                max-height: 280px;
+            }
+
+            .product-info {
+                width: 100%;
+                text-align: left;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .product-details-card {
+                flex-direction: column;
+                width: 75%;
+                margin: 2.5rem auto;
+                padding: 25px;
+            }
+
+            .product-image {
+                width: 100%;
+                max-height: 320px;
+            }
+
+            .product-info {
+                width: 100%;
+                text-align: left;
+                align-items: flex-start;
+            }
+        }
+
+        @media (min-width: 901px) {
+            .product-details-card {
+                flex-direction: row;
+                width: 900px;
+                margin: 4rem auto;
+            }
+
+            .product-image {
+                width: 50%;
+                max-height: 420px;
+            }
+
+            .product-info {
+                width: 50%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <!--Product Card Section-->
+    <div class="product-details-card">
+
+        <img src="kutsinta1.jpg" alt="Black Kutsinta Regular Box" class="product-image">
+
+        <div class="product-info">
+            <div class="product-name">Black Kutsinta Regular Box</div>
+            <div class="product-price">₱65.00</div>
+            <div class="product-rating">⭐ 4.8</div>
+
+            <div class="product-description">
+                Soft and chewy black kutsinta made with our own mix. It comes in a regular box with caramel sauce and toasted coconut on the side. Perfect for quick snacks, pang-share, or pang-pasalubong. Simple, affordable, and masarap kahit anytime.
+            </div>
+
+
+            <!--The Button-->
+            <a href="product.html" class="back-btn">⬅ Back to Products</a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
