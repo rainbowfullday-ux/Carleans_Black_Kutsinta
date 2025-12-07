@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Branch Locations - Carleans Black Kutsinta</title>
+<style>
+
+
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Page title ano name ng page*/
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+/* Back button pang balik sa about page*/
+.back-button {
+    display: inline-block;
+    margin-bottom: 30px;
+    background: #000;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    text-align: center;
+}
+.back-button:hover {
+    background-color: #fff;
+                color: #000;
+                border: 1px solid #000;
+    
+}
+
+
+
+/* Maps container */
+.maps-container {
+    display: flex;
+    flex-direction: column; /* stack on mobile */
+    gap: 40px;
+    max-width: 1440px;
+    width: 100%;
+}
+
+
+
+
+/* Individual map container para indi magkakadikit */
+.map-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+
+
+/* Map label para sa title ng branch*/
+.map-label {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+
+
+/* Individual map iframe */
+.map-frame {
+    width: 100%;
+    height: 450px;
+    border: 0;
+    border-radius: 10px;
+}
+
+
+
+/* Desktop layout itsura pag desktop */
+@media(min-width: 1025px){
+    .maps-container {
+        flex-direction: row; /* side by side */
+        justify-content: center;
+    }
+    .map-card {
+        width: 30%;
+    }
+}
+
+
+
+/* Tablet adjustment itsura pag tablet*/
+@media(max-width:1024px){
+    .map-frame {
+        height: 400px;
+    }
+}
+
+
+
+/* Mobile adjustment itsura pag cellphone*/
+@media(max-width:768px){
+    .map-frame {
+        height: 300px;
+    }
+}
+
+
+
+</style>
+</head>
+<body>
+
+<h1>Our Branch Locations</h1>
+
+
+     <!--Back button pabalik sa contact page-->
+<a href="contact.html" class="back-button">← Back to Contact</a>
+
+<div class="maps-container">
+
+    <!--Branch 1-->
+    <div class="map-card">
+        <div class="map-label">Branch 1: Calumpang </div>
+        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3863.1708699155406!2d121.18645517594442!3d14.474875785996717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c358c6c56de9%3A0x8c708c8aaefe8b87!2sCarlean%27s%20Black%20kutsinta!5e0!3m2!1sen!2sph!4v1764938057463!5m2!1sen!2sph" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+
+    <!--Branch 2-->
+    <div class="map-card">
+        <div class="map-label">Branch 2: Angono</div>
+        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.341245990537!2d121.15151807594518!3d14.522462985954702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c7ba1ac5a087%3A0xd2555bc64928245a!2sCarlean%27s%20Black%20Kutsinta!5e0!3m2!1sen!2sph!4v1764938107058!5m2!1sen!2sph" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!--Branch 3-->
+    <div class="map-card">
+        <div class="map-label">Branch 3: Pantok</div>
+        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.840096132681!2d121.17721627594486!3d14.493867285979933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c3fc80e39583%3A0x9fd7af5636e3761d!2sCARLEAN%27S!5e0!3m2!1sen!2sph!4v1764938132212!5m2!1sen!2sph" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+
+</div>
+
+</body>
+</html>
