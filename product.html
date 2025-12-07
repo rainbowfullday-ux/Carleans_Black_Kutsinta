@@ -89,7 +89,7 @@
 
 
 
-        /* Hamburger for mobile */
+        /* Hamburger for mobile para sa cp*/
         .hamburger {
             display: none;
             flex-direction: column;
@@ -110,7 +110,7 @@
 
 
 
-        /* Mobile nav */
+        /* Mobile nav para sa cp*/
         .mobile-nav {
             display: none;
             flex-direction: column;
@@ -154,9 +154,9 @@
         }
 
 
-        /* Page container */
+        /* Page container andito ung mga section*/
         .page-container {
-            max-width: 1200px;
+            max-width: 1440px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -394,28 +394,6 @@
                 padding: 0 1rem;
             }
         }
-
-
-/*Animation ng mobile navigation*/
-.mobile-nav {
-    display: flex !important;
-    flex-direction: column;
-    max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.4s ease;
-}
-
-#nav-toggle:checked + .hamburger + .mobile-nav {
-    max-height: 500px; /* enough for all links */
-    padding-top: 15px;
-    padding-bottom: 15px;
-    opacity: 1;
-}
-
-        
     </style>
 </head>
 
@@ -590,4 +568,5 @@
 
 </body>
 </html>
+
 
