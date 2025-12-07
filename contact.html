@@ -8,7 +8,9 @@
 
 
 
-        /* This is the animation */
+        /* This is the animation for the page*/
+Hide quoted text
+
         body {
             animation: fadeIn 0.5s ease-in-out;
             background: #f2f2f2;
@@ -32,6 +34,7 @@
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
+
 
 
 
@@ -83,6 +86,9 @@
                     background: #000;
                     color: #fff;
                 }
+
+
+
 
 
 
@@ -149,9 +155,11 @@
 
 
 
+
+
         /* Page Container */
         .page-container {
-            max-width: 1200px;
+            max-width: 1440px;
             margin: 0 auto;
             padding: 0 20px;
             display: flex;
@@ -182,6 +190,9 @@
                 opacity: 0.85;
                 font-weight: bold;
             }
+
+
+
 
 
         /* Contact details section*/
@@ -221,7 +232,7 @@
 
 
 
-        /* Tablet size to avoid breaking , breakpoint */
+        /* Tablet size to avoid breaking , breakpoint sa cp */
         @media(max-width:1024px) {
             .contact-details {
                 grid-template-columns: repeat(2, 1fr);
@@ -231,7 +242,7 @@
 
 
 
-        /* Mobile to avoid breaking, breakpoint*/
+        /* Mobile to avoid breaking, breakpoint sa tablet*/
         @media(max-width:768px) {
             .contact-details {
                 grid-template-columns: 1fr;
@@ -354,29 +365,97 @@
                 padding: 0 1rem;
             }
         }
-
-
-/*Animation ng mobile navigation*/
-.mobile-nav {
-    display: flex !important;
-    flex-direction: column;
-    max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.4s ease;
-}
-
-#nav-toggle:checked + .hamburger + .mobile-nav {
-    max-height: 500px; /* enough for all links */
-    padding-top: 15px;
-    padding-bottom: 15px;
-    opacity: 1;
-}
-
-
         
+        
+        
+   .social-links {
+    display: flex;
+    justify-content: center; /* center horizontally ->->-> */
+    align-items: center;
+    gap: 40px; /* space between text and icons para indi magkadikit*/
+    margin: 30px 0;
+    flex-wrap: wrap; /* allows wrapping on smaller screens */
+    text-align: center;
+}
+
+.social-links h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 15px 0 0; /* right margin between text and icons */
+}
+
+.social-icons {
+    display: flex;
+    gap: 30px; /* space between icons para indi magkakadikit*/
+}
+
+.social-icons a img {
+    width: 60px;  /* larger icons for big screens para hindi maliit sa malaking screen */
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2); /* simple hover effect, lumalaki na effect*/
+}
+
+/* Tablet breakpoint para maging responsive*/
+@media(max-width:1024px){
+    .social-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .social-links h3 {
+        margin: 0;
+    }
+}
+
+/* Mobile breakpoint para maging responsive*/
+@media(max-width:400px){
+    .social-icons a img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+
+        /* Map Button Section */
+        .map-button-section {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .map-button {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            max-width: 400px; /* stops it from being huge on large screens para hinde panget */
+            width: 100%; /* fills container on small screens para hindi maliit sa cp*/
+            text-align: center;
+        }
+
+            .map-button:hover {
+                background: #806857; /* accent color kulay na pinili ko */
+                transform: scale(1.05);
+            }
+
+        /* Mobile breakpoint */
+        @media(max-width:400px) {
+            .map-button {
+                font-size: 1rem; /* smaller font for very small screens para inde sobra laki */
+                padding: 12px 20px; 
+            }
+        }
+
     </style>
 </head>
 
@@ -400,7 +479,7 @@
         </div>
 
 
-        <!-- Hamburger Toggle for mobile sizes -->
+        <!-- Hamburger Toggle para sa cp -->
         <input type="checkbox" id="nav-toggle">
         <label for="nav-toggle" class="hamburger">
             <div></div>
@@ -410,7 +489,7 @@
 
 
 
-        <!-- Mobile Links that connects it to other pages-->
+        <!-- Mobile Links para sa ibang page-->
         <div class="mobile-nav">
             <a href="index.html">Home</a>
             <a href="product.html">Products</a>
@@ -425,7 +504,7 @@
 
 
 
-        <!-- Header Card section -->
+        <!-- Header section -->
         <section class="header-card">
             <h1>Contact Us</h1>
             <p>We’d love to hear from you!</p>
@@ -439,44 +518,67 @@
             <div class="contact-card">
                 <div class="icon">📞</div>
                 <h4>Phone</h4>
-                <p>0912-345-6789</p>
+                <p>+0935 786 1474</p>
             </div>
             <div class="contact-card">
                 <div class="icon">📍</div>
                 <h4>Address</h4>
-                <p>123 Sample Street, Manila</p>
+                <p>0518 National Road Brgy Calumpang Binangonan Rizal 1940</p>
             </div>
             <div class="contact-card">
                 <div class="icon">⏰</div>
                 <h4>Store Hours</h4>
-                <p>Mon-Sat 8am-6pm</p>
+                <p>Mon – Sun | 7:00 AM – 6:00 PM</p>
             </div>
             <div class="contact-card">
                 <div class="icon">✉️</div>
                 <h4>Email</h4>
-                <p>info@carleansblackkutsinta.com</p>
+                <p>carla_aran@yahoo.com</p>
             </div>
         </section>
 
+
+        <!-- Social Media Section -->
+        <section class="social-links">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/1Cp9JhjPvm/" target="_blank">
+                    <img src="Fb.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/carleansblackkutsinta?igsh=dWsxNzc4emZrbXd4" target="_blank">
+                    <img src="insta.png" alt="Instagram">
+                </a>
+            </div>
+        </section>
+
+
+
+        <!-- Map Button Section -->
+        <section class="map-button-section">
+            <a href="maps.html" class="map-button">View Our Branches on Google Maps</a>
+        </section>
 
 
         <!-- Branches SECTION-->
         <section class="branches">
             <div class="branch-card">
-                <h4>0518, National Road Rd, Binangonan Rizal</h4>
+                <h4>Branch 1: Calumpang</h4>
                 <img src="branch1.png" alt="Branch 1">
             </div>
+
             <div class="branch-card">
-                <h4>G5C3=XJP, Xentro Mall, Angono, Rizal</h4>
+                <h4>Branch 2: Angono</h4>
                 <img src="branch2.png" alt="Branch 2">
             </div>
+
             <div class="branch-card">
-                <h4>Pantok, Binangonan Rizal near Savemore</h4>
+                <h4>Branch 3: Pantok</h4>
                 <img src="branch3.png" alt="Branch 3">
             </div>
         </section>
 
     </div>
+
 
 
 
@@ -495,4 +597,5 @@
 
 </body>
 </html>
+
 
